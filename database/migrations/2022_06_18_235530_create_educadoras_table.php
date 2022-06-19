@@ -15,7 +15,15 @@ return new class extends Migration
     {
         Schema::create('educadoras', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nombre');
+            $table->string('rut');
+            $table->string('telefono_contacto');
+            $table->string('correo_contacto');
+
+            //$table->imagen
+
+            $table->unsignedBigInteger('niveles_id');
+            $table->foreign('niveles_id')->references('id')->on('niveles');
 
             $table->softDeletes();
         });

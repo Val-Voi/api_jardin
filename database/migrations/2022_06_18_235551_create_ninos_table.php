@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('rut');
             $table->string('contacto_apoderado');
 
+            //$table->imagen
+
             $table->unsignedBigInteger('niveles_id');
             $table->foreign('niveles_id')->references('id')->on('niveles');
 
