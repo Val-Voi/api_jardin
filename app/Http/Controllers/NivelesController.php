@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nivel;
 use Illuminate\Http\Request;
+use App\Http\Requests\NivelesRequest;
+
 
 class NivelesController extends Controller
 {
@@ -13,23 +16,17 @@ class NivelesController extends Controller
 
 
 
-    public function store(Request $request)
+    public function store(NivelesRequest $request)
     {
-
+        $nivel = new Nivel();
+        $nivel->nombre = $request->nombre;
+        $nivel->save();
+        return $nivel; 
     }
 
     public function show(Nivel $nivel)
     {
+        return $nivel;
     }
 
-
-    public function update(NinoEditarRequest $request, Nino $nino)
-    {
-
-    }
-
-    public function destroy(Nino $nino)
-    {
-
-    }
 }
