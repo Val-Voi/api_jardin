@@ -18,6 +18,7 @@ class NivelesController extends Controller
 
     public function store(NivelesRequest $request)
     {
+        $validator = $request->validated();
         $nivel = new Nivel();
         $nivel->nombre = $request->nombre;
         $nivel->save();
