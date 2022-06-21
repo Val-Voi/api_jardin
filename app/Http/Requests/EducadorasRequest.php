@@ -6,31 +6,34 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class EducadorasRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
     public function authorize()
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
-     */
     public function rules()
     {
         return [
             'nombre' => 'required',
+            'rut' => 'required',
+            'telefono_contacto' => 'required|digits:9',
+            'correo_contacto' => 'required|email::rfc,dns',
+            'niveles_id' => 'nullable|exists:niveles,id',
+
         ];
     }
 
-    public function messages(){
+    public function messages()
+    {
         return [
-            'nombre.required' => 'El nombre es requerido',
+            'nombre.required' => 'Nombre no puede ser nulo',
+            'rut.required' =>  "Debe ingresar un rut",
+            'telefono_contacto.required' => 'Debe ingresar número telefónico',
+            'telefono_contacto.digits' => 'Debe ingresar un número telefónico válido',
+
+            'correo_contacto.required' => 'Debe ingresar correo electrónico',
+            'correo_contacto.email' => 'Debe ingresar un correo electrónico válido',
+            'niveles_id.exists' => 'Nivel especificado no existe',
         ];
     }
 }

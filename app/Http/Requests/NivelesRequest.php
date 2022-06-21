@@ -15,7 +15,7 @@ class NivelesRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|min:8',
+            'nombre' => 'required',
         ];
     }
 
@@ -23,8 +23,6 @@ class NivelesRequest extends FormRequest
     {
         return [
             'nombre.required' => 'Nombre no puede ser nulo',
-            'nombre.min' => 'Nombre debe ser largo',
-            //'nombre.string' => 'Nombre debe ser string'
         ];
     }
 }
