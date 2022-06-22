@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nino;
+
 use Illuminate\Http\Request;
 
 class NinosController extends Controller
