@@ -12,7 +12,7 @@ class Educadora extends Model
     protected $table = 'educadoras';
     public $timestamps = false;
 
-    public function nivel(){
-        return $this->belongsTo(Nivel::class);
+    public function niveles(){
+        return $this->belongsToMany(Nivel::class);
     }
 }

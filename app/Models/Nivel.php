@@ -11,4 +11,8 @@ class Nivel extends Model
 
     protected $table = 'niveles';
     public $timestamps = false;
+
+    public function educadoras(){
+        return $this->belongsToMany(Educadora::class);
+    }
 }

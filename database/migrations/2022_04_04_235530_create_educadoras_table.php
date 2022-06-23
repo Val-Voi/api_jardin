@@ -22,9 +22,6 @@ return new class extends Migration
 
             //$table->imagen
 
-            $table->unsignedBigInteger('niveles_id');
-            $table->foreign('niveles_id')->references('id')->on('niveles');
-
             $table->softDeletes();
         });
     }

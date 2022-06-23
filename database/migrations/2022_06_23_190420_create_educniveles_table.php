@@ -13,12 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('eventos', function (Blueprint $table) {
+        Schema::create('educadora_nivel', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion');
-            
-            $table->unsignedBigInteger('niños_id');
-            $table->foreign('niños_id')->references('id')->on('niños');
+            $table->timestamps();
+
+            $table->unsignedBigInteger('niveles_id');
+            $table->foreign('niveles_id')->references('id')->on('niveles');
+
+            $table->unsignedBigInteger('educadoras_id');
+            $table->foreign('educadoras_id')->references('id')->on('educadoras');
         });
     }
 
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eventos');
+        Schema::dropIfExists('educadora_nivel');
     }
 };
