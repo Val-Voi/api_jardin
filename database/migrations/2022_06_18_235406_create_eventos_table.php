@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('eventos', function (Blueprint $table) {
             $table->id();
             $table->string('descripcion');
+            $table->date('fecha');
             
-            $table->unsignedBigInteger('niños_id');
-            $table->foreign('niños_id')->references('id')->on('niños');
+            $table->unsignedBigInteger('nino_id');
+            $table->foreign('nino_id')->references('id')->on('niños');
         });
     }
 

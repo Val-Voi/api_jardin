@@ -16,4 +16,7 @@ class Nino extends Model
     public function nivel(){
         return $this->belongsTo(Nivel::class);
     }
+    public function eventos(){
+        return $this->hasMany(Evento::class);
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Evento;
 
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class EventosController extends Controller
     {
         $evento = new Evento();
         $evento->descripcion = $request->descripcion;
-        $evento->niños_id = $request->niños_id;
+        $evento->fecha = $request->fecha;
+        $evento->nino_id = $request->nino_id;
 
         $evento->save();
         return $evento; 

@@ -39,7 +39,10 @@ class NinosController extends Controller
     {
 
     }
-
+    public function ninoeventos(Nino $nino)
+    {
+        return $nino->eventos;
+    }
     public function destroy(Nino $nino)
     {
         $nino->delete();
