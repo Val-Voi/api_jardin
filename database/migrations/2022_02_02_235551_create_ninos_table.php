@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('niños', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('apellido');
             $table->date('fecha_nacimiento');
             $table->string('rut');
             $table->string('contacto_apoderado');

@@ -10,7 +10,7 @@ class NinosController extends Controller
 
     public function index()
     {
-        return Nino::all();
+        return Nino::orderBy('apellido')->get();
     }
 
 

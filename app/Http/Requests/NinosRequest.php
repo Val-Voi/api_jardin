@@ -15,6 +15,7 @@ class NinosRequest extends FormRequest
     {
         return [
             'nombre' => 'required',
+            'apellido' => 'required',
             'fecha_nacimiento' => 'required|before:today',
             'rut' => 'required',
             'contacto_apoderado' => 'required',

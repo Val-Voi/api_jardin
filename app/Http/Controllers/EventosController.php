@@ -9,7 +9,9 @@ class EventosController extends Controller
 {
     public function index()
     {
-        return Evento::all();
+        //return Evento::all();
+        return Evento::orderBy('fecha')->get();
+
     }
 
 
