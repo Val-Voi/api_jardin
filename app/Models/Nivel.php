@@ -15,4 +15,7 @@ class Nivel extends Model
     public function educadoras(){
         return $this->belongsToMany(Educadora::class);
     }
+    public function ninos(){
+        return $this->hasMany(Nino::class);
+    }
 }

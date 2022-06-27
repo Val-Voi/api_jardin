@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nino;
+use App\Models\Nivel;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\NinoEditarNivelRequest;
 
@@ -58,6 +60,9 @@ class NinosController extends Controller
     public function ninoeventos(Nino $nino)
     {
         return $nino->eventos;
+    }
+    public function ninonivel(Nino $nino){
+        return Nivel::where('id', $nino->niveles_id)->first()->nombre;
     }
     public function destroy(Nino $nino)
     {
