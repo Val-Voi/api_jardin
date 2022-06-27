@@ -10,7 +10,9 @@ class Educadora_NivelController extends Controller
 {
     public function index()
     {
-        return Educadora_Nivel::all();
+        //return Educadora_Nivel::all();
+        return Educadora_Nivel::orderBy('created_at')->get();
+
     }
 
 
@@ -18,8 +20,8 @@ class Educadora_NivelController extends Controller
     public function store(EducadoraNivelRequest $request)
     {
         $educadora_nivel = new Educadora_Nivel();
-        $educadora_nivel->niveles_id = $request->niveles_id;
-        $educadora_nivel->educadoras_id = $request->educadoras_id;
+        $educadora_nivel->nivel_id = $request->nivel_id;
+        $educadora_nivel->educadora_id = $request->educadora_id;
 
         $educadora_nivel->save();
         return $educadora_nivel; 
