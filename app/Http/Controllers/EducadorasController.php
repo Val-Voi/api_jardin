@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Educadora;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\EducadorasRequest;
+
 
 class EducadorasController extends Controller
 {
@@ -20,9 +23,6 @@ class EducadorasController extends Controller
         $educadora->rut = $request->rut;
         $educadora->telefono_contacto = $request->telefono_contacto;
         $educadora->correo_contacto = $request->correo_contacto;
-
-        $educadora->niveles_id = $request->niveles_id;
-
         $educadora->save();
         return $educadora; 
     }

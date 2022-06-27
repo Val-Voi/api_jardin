@@ -14,3 +14,4 @@ Route::apiResource('/eventos',EventosController::class);
 Route::apiResource('/niveles',NivelesController::class);
 
 Route::get('/ninos/{nino}/eventos',[NinosController::class,'ninoeventos']);
+Route::put('/ninos/{nino}/nivel',[NinosController::class,'updateNivel']);
