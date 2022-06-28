@@ -20,3 +20,7 @@ Route::put('/ninos/{nino}/nivel',[NinosController::class,'updateNivel']);
 
 Route::get('/educadoras/{educadora}/nivel',[EducadorasController::class,'educadoranivel']);
 
+Route::get('/niveles/{nivel}/ninos',[NivelesController::class,'nivelninos']);
+Route::get('/niveles/{nivel}/educadoras',[NivelesController::class,'niveleducadoras']);
+
+

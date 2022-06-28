@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nivel;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\NivelesRequest;
 
@@ -11,7 +12,7 @@ class NivelesController extends Controller
 {
     public function index()
     {
-        return Nivel::all();
+        return Nivel::orderBy('nombre')->get();
     }
 
 
@@ -25,9 +26,23 @@ class NivelesController extends Controller
         return $nivel; 
     }
 
+    
     public function show(Nivel $nivel)
     {
         return $nivel;
     }
 
+    public function destroy(Nivel $nivele)
+    {
+        
+        $nivele->delete();
+    }
+
+    public function nivelninos(Nivel $nivel){
+        return $nivel->ninos;
+    }
+
+    public function niveleducadoras(Nivel $nivel){
+        return $nivel->educadoras;
+    }
 }

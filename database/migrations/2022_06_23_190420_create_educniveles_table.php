@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->unsignedBigInteger('niveles_id');
-            $table->foreign('niveles_id')->references('id')->on('niveles');
+            $table->unsignedBigInteger('nivel_id');
+            $table->foreign('nivel_id')->references('id')->on('niveles');
 
-            $table->unsignedBigInteger('educadoras_id');
-            $table->foreign('educadoras_id')->references('id')->on('educadoras');
+            $table->unsignedBigInteger('educadora_id');
+            $table->foreign('educadora_id')->references('id')->on('educadoras');
         });
     }
 
