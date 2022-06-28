@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{NinosController, EducadorasController, EventosController, NivelesController, Educadora_NivelController};
+use App\Http\Controllers\{NinosController, EducadorasController, EventosController, NivelesController, Educadora_NivelController, ImagenController};
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -23,4 +23,6 @@ Route::get('/educadoras/{educadora}/nivel',[EducadorasController::class,'educado
 Route::get('/niveles/{nivel}/ninos',[NivelesController::class,'nivelninos']);
 Route::get('/niveles/{nivel}/educadoras',[NivelesController::class,'niveleducadoras']);
 
+Route::post('/imagen', [ImagenController::class, 'index']);
+Route::get('/imagen/{imagen}', [ImagenController::class, 'get']);
 
