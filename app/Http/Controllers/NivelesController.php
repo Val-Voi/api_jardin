@@ -45,4 +45,11 @@ class NivelesController extends Controller
     public function niveleducadoras(Nivel $nivel){
         return $nivel->educadoras;
     }
+
+    public function update(NivelesRequest $request, Nivel $nivel)
+    {
+        $nivel->nombre = $request->nombre;
+        $nivel->save();
+        return $nivel;
+    }
 }
