@@ -36,7 +36,10 @@ class EventosController extends Controller
 
     public function update(EventoEditarRequest $request, Evento $evento)
     {
-
+        $evento->descripcion = $request->descripcion;
+        $evento->fecha = $request->fecha;
+        $evento->save();
+        return $evento;
     }
 
     public function destroy(Evento $evento)
