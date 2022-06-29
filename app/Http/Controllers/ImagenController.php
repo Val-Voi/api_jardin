@@ -30,7 +30,12 @@ class ImagenController extends Controller
         // $image = str_replace(' ', '+', $image);
         // $imageName = time().'.png';
         $data = file_get_contents(public_path('/img/1656387706.png'));
-        $base64 = 'data:image/' . public_path('/img/1656387706.png') . ';base64,' . base64_encode($data);
+       // $base64 = 'data:image/' . public_path('/img/1656387706.png') . ';base64,' . base64_encode($data);
+        $base64 = base64_encode($data);
+
+               //$base64 = substr($base64, 3);
+               // $base64 = substr($base64, 0, -3);
+
         return $base64;
 
 
