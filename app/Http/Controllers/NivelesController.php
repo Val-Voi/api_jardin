@@ -27,9 +27,9 @@ class NivelesController extends Controller
     }
 
     
-    public function show(Nivel $nivel)
+    public function show(Nivel $nivele)
     {
-        return $nivel;
+        return $nivele;
     }
 
     public function destroy(Nivel $nivele)
@@ -46,10 +46,10 @@ class NivelesController extends Controller
         return $nivel->educadoras;
     }
 
-    public function update(NivelesRequest $request, Nivel $nivel)
+    public function update(NivelesRequest $request, Nivel $nivele)
     {
-        $nivel->nombre = $request->nombre;
-        $nivel->save();
-        return $nivel;
+        $nivele->nombre = $request->nombre;
+        $nivele->save();
+        return $nivele;
     }
 }
