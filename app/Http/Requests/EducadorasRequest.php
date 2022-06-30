@@ -17,8 +17,8 @@ class EducadorasRequest extends FormRequest
             'nombre' => 'required',
             'rut' => 'required',
             'telefono_contacto' => 'required|digits:9',
-            'correo_contacto' => 'required|email::rfc,dns',
-            'niveles_id' => 'nullable|exists:niveles,id',
+            'correo_contacto' => 'required|email:rfc,dns',
+            //'niveles_id' => 'nullable|exists:niveles,id',
 
         ];
     }
@@ -33,7 +33,7 @@ class EducadorasRequest extends FormRequest
 
             'correo_contacto.required' => 'Debe ingresar correo electrónico',
             'correo_contacto.email' => 'Debe ingresar un correo electrónico válido',
-            'niveles_id.exists' => 'Nivel especificado no existe',
+           // 'niveles_id.exists' => 'Nivel especificado no existe',
         ];
     }
 }

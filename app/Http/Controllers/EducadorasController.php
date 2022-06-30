@@ -19,7 +19,7 @@ class EducadorasController extends Controller
 
 
 
-    public function store(Request $request)
+    public function store(EducadorasRequest $request)
     {
         $educadora = new Educadora();
         $educadora->nombre = $request->nombre;
@@ -45,9 +45,15 @@ class EducadorasController extends Controller
         //return Nivel::where('id', Educadora_Nivel::where('educadora_id', $educadora->id)->orderBy('created_at', 'desc')->first()->nivel_id);
 
     }
-    public function update(EducadoraEditarRequest $request, Educadora $educadora)
+    public function update(EducadorasRequest $request, Educadora $educadora)
     {
-
+        $educadora->id = $request->id;
+        $educadora->nombre = $request->nombre;
+        $educadora->rut = $request->rut;
+        $educadora->correo_contacto = $request->correo_contacto;
+        $educadora->telefono_contacto = $request->telefono_contacto;
+        $educadora->save();
+        return $educadora;
     }
 
     public function destroy(Educadora $educadora)
