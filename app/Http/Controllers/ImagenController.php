@@ -23,13 +23,13 @@ class ImagenController extends Controller
 
     }
 
-    public function get(Request $imagen){
+    public function getImage(string $imagen){
         //$type = pathinfo($path, PATHINFO_EXTENSION);
-        // $image  =   $request->imagen;  // your base64 encoded
+        // $image  =   $imagen->imagen;  // your base64 encoded
         // $image = str_replace('data:image/png;base64,', '', $image);
         // $image = str_replace(' ', '+', $image);
         // $imageName = time().'.png';
-        $data = file_get_contents(public_path('/img/1656387706.png'));
+        $data = file_get_contents(public_path('/img/'.$imagen));
        // $base64 = 'data:image/' . public_path('/img/1656387706.png') . ';base64,' . base64_encode($data);
         $base64 = base64_encode($data);
 

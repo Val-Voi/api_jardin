@@ -24,5 +24,5 @@ Route::get('/niveles/{nivel}/ninos',[NivelesController::class,'nivelninos']);
 Route::get('/niveles/{nivel}/educadoras',[NivelesController::class,'niveleducadoras']);
 
 Route::post('/imagen', [ImagenController::class, 'index']);
-Route::get('/imagen/{imagen}', [ImagenController::class, 'get']);
+Route::get('/imagen/{imagen}', [ImagenController::class, 'getImage']);
 

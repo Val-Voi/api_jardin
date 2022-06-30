@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('fecha_nacimiento');
             $table->string('rut');
             $table->string('contacto_apoderado');
+            $table->string('imagen');
 
             //$table->imagen
 

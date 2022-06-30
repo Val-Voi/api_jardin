@@ -16,7 +16,7 @@ class EducadorasRequest extends FormRequest
         return [
             'nombre' => 'required',
             'rut' => 'required',
-            'telefono_contacto' => 'required|digits:9',
+            'telefono_contacto' => 'required|digits:8',
             'correo_contacto' => 'required|email:rfc,dns',
             //'niveles_id' => 'nullable|exists:niveles,id',
 
