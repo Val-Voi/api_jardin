@@ -10,7 +10,7 @@ class ImagenController extends Controller
 {
     public function index(Request $request){
         if($request!= null):
-            $image  =   $request->imagen;  // your base64 encoded
+            $image  =   $request->imagen; 
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
             $imageName = $request->nombre;
@@ -35,6 +35,8 @@ class ImagenController extends Controller
 
                //$base64 = substr($base64, 3);
                // $base64 = substr($base64, 0, -3);
+        //$base64 = 'data:image/png;base64,'.$base64;
+        //$base64 = str_replace('+', ' ', $image);
 
         return $base64;
 

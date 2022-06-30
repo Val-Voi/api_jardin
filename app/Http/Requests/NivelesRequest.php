@@ -22,7 +22,7 @@ class NivelesRequest extends FormRequest
     public function messages()
     {
         return [
-            'nombre.required' => 'Nombre no puede ser nulo',
+            'nombre.required' => 'Ingrese nombre de este nivel',
         ];
     }
 }

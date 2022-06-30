@@ -7,6 +7,8 @@ use App\Models\Nivel;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\NinoEditarNivelRequest;
+use App\Http\Requests\NinosRequest;
+
 
 
 class NinosController extends Controller
@@ -19,7 +21,7 @@ class NinosController extends Controller
 
 
 
-    public function store(Request $request)
+    public function store(NinosRequest $request)
     {
         $nino = new Nino();
         $nino->nombre = $request->nombre;
@@ -66,6 +68,7 @@ class NinosController extends Controller
     }
     public function destroy(Nino $nino)
     {
+        //File::delete(public_path($nino->imagen));
         $nino->delete();
     }
 }
