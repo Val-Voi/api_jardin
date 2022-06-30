@@ -41,9 +41,8 @@ class NinosController extends Controller
     }
 
 
-    public function update(NinoEditarRequest $request, Nino $nino)
+    public function update(Request $request, Nino $nino)
     {
-        $nino->id = $request->id;
         $nino->nombre = $request->nombre;
         $nino->apellido = $request->apellido;
         $nino->fecha_nacimiento = $request->fecha_nacimiento;
