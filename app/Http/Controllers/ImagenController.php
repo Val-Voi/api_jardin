@@ -13,7 +13,7 @@ class ImagenController extends Controller
             $image  =   $request->imagen;  // your base64 encoded
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
-            $imageName = time().'.png';
+            $imageName = $request->nombre;
             \File::put(public_path('/img/' . $imageName), base64_decode($image));
 
         endif;

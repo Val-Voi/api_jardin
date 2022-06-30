@@ -28,6 +28,7 @@ class NinosController extends Controller
         $nino->rut = $request->rut;
         $nino->contacto_apoderado = $request->contacto_apoderado;
         $nino->nivel_id = $request->nivel_id;
+        $nino->imagen = $request->imagen;
 
         $nino->save();
         return $nino; 
