@@ -17,6 +17,6 @@ class Nino extends Model
         return $this->belongsTo(Nivel::class);
     }
     public function eventos(){
-        return $this->hasMany(Evento::class);
+        return $this->hasMany(Evento::class)->orderByDesc('fecha');
     }
 }

@@ -24,9 +24,9 @@ class EventosRequest extends FormRequest
     public function messages()
     {
         return [
-            'descripcion.required' => 'Descripción del evento no puede ser vacía',
-            'fecha.required' => 'Ingrese fecha en que ocurrió el evento',
-            'nino_id.exists' => 'El niño especificado no existe',
+            'descripcion.required' => 'Ingrese descripción del evento',
+            'fecha.required' => 'Especifique fecha en que ocurrió el evento',
+            'nino_id.exists' => 'El niño especificado no se encuentra en el sistema',
         ];
     }
 }
