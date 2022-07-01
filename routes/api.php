@@ -18,6 +18,9 @@ Route::get('/ninos/{nino}/eventos',[NinosController::class,'ninoeventos']);
 Route::get('/ninos/{nino}/nivel',[NinosController::class,'ninonivel']);
 Route::put('/ninos/{nino}/nivel',[NinosController::class,'updateNivel']);
 
+Route::get('/eventos/{evento}/nino',[EventosController::class,'eventonino']);
+
+
 Route::get('/educadoras/{educadora}/nivel',[EducadorasController::class,'educadoranivel']);
 
 Route::get('/niveles/{nivel}/ninos',[NivelesController::class,'nivelninos']);

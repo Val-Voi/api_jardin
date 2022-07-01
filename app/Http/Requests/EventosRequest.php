@@ -15,7 +15,8 @@ class EventosRequest extends FormRequest
     {
         return [
             'descripcion' => 'required',
-            'niños_id' => 'nullable|exists:niños,id',
+            'fecha' => 'required',
+            'nino_id' => 'nullable|exists:niños,id',
 
         ];
     }
@@ -24,7 +25,8 @@ class EventosRequest extends FormRequest
     {
         return [
             'descripcion.required' => 'Descripción del evento no puede ser vacía',
-            'niños_id.exists' => 'El niño especificado no existe',
+            'fecha.required' => 'Ingrese fecha en que ocurrió el evento',
+            'nino_id.exists' => 'El niño especificado no existe',
         ];
     }
 }
